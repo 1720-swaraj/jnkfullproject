@@ -1,0 +1,289 @@
+/* PAGE */
+
+.downloadContainer{
+  width:100%;
+  max-width:1300px;
+  margin:40px auto;
+  padding:0 20px;
+  font-family:"Segoe UI", sans-serif;
+}
+
+/* TOP BAR */
+
+.downloadTopBar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* HEADING */
+
+.downloadHeading{
+  font-size:30px;
+  font-weight:700;
+  color:#222;
+  margin:0;
+}
+
+/* SEARCH */
+
+.searchSection{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.searchSection label{
+  font-size:15px;
+  font-weight:600;
+}
+
+.searchSection input{
+  width:280px;
+  height:42px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  padding:0 14px;
+  font-size:14px;
+  outline:none;
+}
+
+.searchSection input:focus{
+  border-color:#3564df;
+  box-shadow:0 0 0 3px rgba(53,100,223,0.12);
+}
+
+/* TABLE AREA */
+
+.tableArea{
+  width:100%;
+  overflow-x:auto;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* TABLE */
+
+.downloadTable{
+  width:100%;
+  min-width:1100px;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+
+/* HEAD */
+
+.downloadTable thead{
+  background:#3564df;
+}
+
+.downloadTable thead th{
+  color:white;
+  font-size:14px;
+  font-weight:700;
+  padding:16px 14px;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+
+.downloadTable thead th:last-child{
+  border-right:none;
+}
+
+/* BODY */
+
+.downloadTable tbody td{
+  padding:16px 14px;
+  font-size:13px;
+  color:#333;
+  border-bottom:1px solid #ececec;
+  text-align:center;
+  vertical-align:middle;
+  word-break:break-word;
+}
+
+/* ROW */
+
+.downloadTable tbody tr{
+  transition:0.2s;
+}
+
+.downloadTable tbody tr:nth-child(even){
+  background:#fafafa;
+}
+
+.downloadTable tbody tr:hover{
+  background:#f3f6ff;
+}
+
+/* COLUMN WIDTHS */
+
+.titleCell{
+  width:20%;
+  font-weight:600;
+}
+
+.descCell{
+  width:30%;
+  line-height:1.6;
+}
+
+.filesCell{
+  width:35%;
+}
+
+.dateCell{
+  width:15%;
+  white-space:nowrap;
+  font-weight:600;
+  color:#666;
+}
+
+/* FILE COLUMN */
+
+.filesColumn{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* SINGLE FILE */
+
+.fileRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  background:#f5f7ff;
+  border:1px solid #dbe4ff;
+  border-radius:10px;
+  padding:10px 12px;
+}
+
+/* FILE NAME */
+
+.fileName{
+  flex:1;
+  font-size:12px;
+  font-weight:600;
+  color:#333;
+  text-align:left;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* BUTTON */
+
+.downloadBtn{
+  border:none;
+  background:#3564df;
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+  flex-shrink:0;
+}
+
+.downloadBtn:hover{
+  background:#244ec7;
+}
+
+/* PAGINATION */
+
+.pagination{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.pagination button{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:10px;
+  background:#e5e7eb;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.pagination button:hover{
+  background:#3564df;
+  color:white;
+}
+
+.pagination .activePage{
+  background:#3564df;
+  color:white;
+}
+
+/* NO DATA */
+
+.noData{
+  text-align:center;
+  padding:40px !important;
+  font-size:18px !important;
+  font-weight:700;
+  color:#888 !important;
+}
+
+/* HIGHLIGHT */
+
+mark{
+  background:yellow;
+  padding:2px 4px;
+  border-radius:4px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .downloadHeading{
+    font-size:24px;
+  }
+
+  .searchSection{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .searchSection input{
+    width:100%;
+  }
+
+  .downloadTable{
+    min-width:950px;
+  }
+
+  .downloadTable thead th{
+    font-size:12px;
+    padding:12px;
+  }
+
+  .downloadTable tbody td{
+    font-size:12px;
+    padding:12px;
+  }
+
+  .fileRow{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .downloadBtn{
+    width:100%;
+  }
+}

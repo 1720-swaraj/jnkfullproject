@@ -1,0 +1,96 @@
+/* 🔥 SINGLE CLEAN HEADER STYLE */
+.header {
+  width: 100%;
+  background: #1e293b; /* charcoal */
+  color: #e2e8f0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 40px;   /* 🔥 more breathing space */
+  margin-bottom: 10px;
+
+  flex-wrap: wrap;
+  font-size: 16px;      /* 🔥 base bigger */
+}
+
+/* LEFT TEXT */
+.header .left span {
+  margin-right: 14px;
+  font-size: 15px;      /* 🔥 increased */
+  font-weight: 600;     /* 🔥 bold */
+  opacity: 0.95;
+}
+
+/* RIGHT SIDE */
+.header .right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* DROPDOWN */
+.header select {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.registerBtn {
+  background: #f97316;
+  padding: 8px 16px;
+  border-radius: 25px;
+
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  font-weight: 700;     /* 🔥 bold */
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.registerBtn:hover {
+  background: #ea580c;
+  transform: scale(1.05);
+}
+
+/* 🔥 TABLET */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .header .left span {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  .header .right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* 📱 MOBILE SMALL */
+@media (max-width: 480px) {
+  .header {
+    font-size: 14px;
+  }
+
+  .registerBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,34 @@
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 20px;
+
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  height: 70px;
+}
+
+.brandText h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.brandText p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.banner {
+  height: 90px;
+  border-radius: 12px;
+}

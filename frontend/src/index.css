@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+  
+/* SMOOTH UI */
+button {
+  transition: 0.2s ease;
+}
+html {
+  font-size: 17px;
+}
+
+body {
+  font-weight: 500;
+}

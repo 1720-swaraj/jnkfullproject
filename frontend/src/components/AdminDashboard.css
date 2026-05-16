@@ -1,0 +1,1548 @@
+.dashboard {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f1f5f9;
+}
+
+/* ================= TOPBAR ================= */
+.topbar {
+  height: 65px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logoutTop {
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= LAYOUT ================= */
+.layout {
+  display: flex;
+  flex: 1;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 250px;
+  background: #020617;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.sidebar button {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: none;
+  color: #cbd5f5;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.sidebar .active {
+  background: #f97316;
+  color: white;
+}
+
+.sidebar:not(.open) {
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+/* ================= CONTENT ================= */
+.content {
+  flex: 1;
+  padding: 25px;
+}
+
+/* ================= TABLE CARD ================= */
+.tableCard {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f97316;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* ================= BUTTONS ================= */
+.actionBtn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.editBtn {
+  background: #10b981;
+  color: white;
+}
+.editBtn:hover {
+  background: #0bb37b;
+}
+
+.deleteBtn {
+  background: #ef4444;
+  color: white;
+}
+.deleteBtn:hover {
+  background: #f43333;
+}
+
+.viewBtn {
+  background: #3b82f6;
+  color: white;
+}
+.viewBtn:hover {
+  background: #2563eb;
+}
+
+/* ================= SEARCH ================= */
+.searchBox {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background: #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background: #cbd5f5;
+}
+
+.activePage {
+  background: #f97316 !important;
+  color: white;
+}
+
+/* ================= MODAL BACKDROP ================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ================= MODAL BOX ================= */
+.modalContent {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+
+  animation: pop 0.25s ease-in-out;
+}
+
+/* animation */
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= PROFILE IMAGE ================= */
+/* .profileImg {
+  width: 100px;
+  height: 100px;
+  border-radius:6px;
+  object-fit: cover;
+  margin: 10px 0;
+  border: 3px solid #f97316;
+} */
+
+/* ================= MODAL INPUTS ================= */
+.modalContent input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ================= MODAL BUTTONS ================= */
+.modalContent button {
+  margin: 8px 5px 0;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modalContent button:first-of-type {
+  background: #10b981;
+  color: white;
+}
+
+.modalContent button:last-of-type {
+  background: #ef4444;
+  color: white;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .modalContent {
+    width: 90%;
+  }
+}
+/* ACTION BUTTON CELL */
+.actionCell {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* COMMON BUTTON STYLE */
+.actionBtn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  transition: 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.actionBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* EDIT */
+.editBtn {
+  background: #10b981;
+  color: white;
+}
+
+/* DELETE */
+.deleteBtn {
+  background: #ef4444;
+  color: white;
+}
+
+/* VIEW */
+.viewBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+
+/* ================= ACTION CELL ================= */
+.actionCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ================= BUTTON BASE ================= */
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+/* ICON STYLE */
+.btnIcon {
+  font-size: 14px;
+}
+
+/* HOVER EFFECT */
+.actionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* EDIT BUTTON */
+.editBtn {
+  background: #10b981;
+  color: white;
+}
+.editBtn:hover {
+  background: #059669;
+}
+
+/* DELETE BUTTON */
+.deleteBtn {
+  background: #ef4444;
+  color: white;
+}
+.deleteBtn:hover {
+  background: #dc2626;
+}
+
+/* VIEW BUTTON */
+.viewBtn {
+  background: #3b82f6;
+  color: white;
+}
+.viewBtn:hover {
+  background: #2563eb;
+}
+.tableTopBar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+
+
+.searchBox{
+  width:250px;
+}
+
+.btn{
+  padding:6px 10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  display:flex;
+  gap:5px;
+}
+
+.editBtn{background:#10b981;color:white;}
+.deleteBtn{background:#ef4444;color:white;}
+.viewBtn{background:#3b82f6;color:white;}
+
+
+.tableImg{
+  width:45px;
+  height:45px;
+  border-radius:6px;
+  object-fit:cover;
+  border:2px solid #0e0d0c;
+}
+
+.profileImgTop{
+  width:90px;
+  height:90px;
+  border-radius:6px;
+  object-fit:cover;
+  margin-bottom:10px;
+  border:3px solid #f97316;
+}
+.exportBtns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* COMMON BUTTON STYLE */
+.exportBtns button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* HOVER EFFECT */
+.exportBtns button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* COPY BUTTON */
+.exportBtns button:nth-child(1) {
+  background: #6366f1;
+  color: white;
+}
+
+/* CSV BUTTON */
+.exportBtns button:nth-child(2) {
+  background: #10b981;
+  color: white;
+}
+
+/* EXCEL BUTTON */
+.exportBtns button:nth-child(3) {
+  background: #22c55e;
+  color: white;
+}
+
+/* PDF BUTTON */
+.exportBtns button:nth-child(4) {
+  background: #ef4444;
+  color: white;
+}
+
+/* ACTIVE CLICK EFFECT */
+.exportBtns button:active {
+  transform: scale(0.96);
+}
+/* CLOSE ICON (TOP RIGHT X) */
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s;
+}
+
+.closeIcon:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+/* MAKE MODAL POSITION RELATIVE FOR ICON */
+.modalContent {
+  position: relative;
+}
+
+/* SECTION TITLE */
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* FORM */
+.sectionForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sectionInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* ADD BUTTON */
+.addBtn {
+  background: #f97316;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: 0.2s;
+}
+
+.addBtn:hover {
+  background: #ea580c;
+}
+
+/* TABLE */
+.sectionTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sectionTable th {
+  background: #f97316;
+  color: white;
+}
+
+.sectionTable th,
+.sectionTable td {
+  padding: 12px;
+  text-align: center;
+}
+
+/* EDIT INPUT */
+.editInput {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ACTION BUTTONS */
+.actionCell {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* BUTTON STYLES */
+.editBtn {
+  background: #3b82f6;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+.deleteBtn {
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+.saveBtn {
+  background: #10b981;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+.cancelBtn {
+  background: #6b7280;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+/* HOVER EFFECT */
+.editBtn:hover { background: #2563eb; }
+.deleteBtn:hover { background: #dc2626; }
+.saveBtn:hover { background: #059669; }
+.cancelBtn:hover { background: #4b5563; }
+
+
+
+
+
+
+
+
+/* ================= RESPONSIVE LAYOUT ================= */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .content {
+    padding: 15px;
+  }
+}
+
+
+/* HIDE SIDEBAR ON MOBILE */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionForm {
+    flex-direction: column;
+  }
+
+  .sectionInput {
+    width: 100%;
+  }
+
+  .addBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .actionCell {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .actionCell button {
+    width: 100%;
+  }
+}@media (max-width: 600px) {
+  .topbar {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .topbar h2 {
+    font-size: 16px;
+  }
+
+  .logoutTop {
+    padding: 6px 10px;
+    font-size: 8px;
+  }
+}@media (max-width: 768px) {
+  .tableTopBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .searchBox {
+    width: 100%;
+  }
+
+  .exportBtns {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 500px) {
+  .modalContent {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.tableCard {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.8);
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+-webkit-overflow-scrolling: touch; /* smooth mobile scroll */
+}
+/* make table wider so scroll appears */
+table {
+  min-width: 700px;
+}
+
+@media (max-width: 768px) {
+
+  .tableWrapper {
+    border-radius: 10px;
+  }
+
+  table {
+    font-size: 10px;
+    min-width: 800px; /* force scroll */
+  }
+
+  th, td {
+    padding: 8px;
+    white-space: nowrap;
+  }
+}
+.content {
+  flex: 1;
+  padding: 25px;
+  overflow-x: auto; /* prevent breaking */
+}
+
+/*add for content */
+.contentPage {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contentForm {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contentTable {
+  flex: 2;
+}
+.contentForm {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contentForm input,
+.contentForm select,
+.contentForm textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.contentForm button {
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+/* ================= EDIT CONTENT MODAL ================= */
+.formTitle {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.modalContent {
+  position: relative;
+  width: 400px;
+  max-width: 95%;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Smooth animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* CLOSE ICON */
+.closeIcon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+}
+
+.closeIcon:hover {
+  color: #ef4444;
+  transform: scale(1.2);
+}
+
+/* ================= FORM INPUTS ================= */
+
+.modalContent select,
+.modalContent input,
+.modalContent textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+/* Focus effect */
+.modalContent input:focus,
+.modalContent textarea:focus,
+.modalContent select:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 5px rgba(249,115,22,0.3);
+}
+
+/* TEXTAREA */
+.modalContent textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+
+.profileImgTop {
+  width: 90px;
+  height: 90px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 3px solid #f97316;
+  display: block;
+}
+
+/* ================= BUTTONS ================= */
+
+.modalContent button {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 45%;
+}
+
+/* UPDATE BUTTON */
+.modalContent button:first-of-type {
+  background: #10b981;
+  color: white;
+}
+
+.modalContent button:first-of-type:hover {
+  background: #059669;
+}
+
+/* CANCEL BUTTON */
+.modalContent button:last-of-type {
+  background: #ef4444;
+  color: white;
+}
+
+.modalContent button:last-of-type:hover {
+  background: #dc2626;
+}
+
+/* BUTTON ROW ALIGN */
+.modalContent button + button {
+  margin-left: 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 500px) {
+  .modalContent {
+    padding: 15px;
+  }
+
+  .modalContent button {
+    width: 100%;
+    margin: 6px 0;
+  }
+}
+.contentTable .editBtn {
+  margin-right: 10px;
+}
+/* ================= BLUE THEME OVERRIDE ================= */
+
+/* BACKGROUND */
+.dashboard {
+  background: #eef4ff; /* light bluish */
+}
+
+/* TOPBAR */
+.topbar {
+  background: #0b3c5d !important;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #0a2540 !important;
+}
+
+.sidebar button {
+  color: #c7d2fe !important;
+}
+
+.sidebar button:hover {
+  background: #1e40af !important;
+  color: #fff !important;
+}
+
+.sidebar .active {
+  background: #2563eb !important;
+  color: #fff !important;
+}
+
+/* TABLE HEADER */
+thead {
+  background: #2563eb !important;
+}
+
+/* TABLE ROW ALT */
+tr:nth-child(even) {
+  background: #f1f5ff !important;
+}
+
+/* PRIMARY BUTTON (ADD / SAVE) */
+.addBtn {
+  background: #2563eb !important;
+}
+.addBtn:hover {
+  background: #1d4ed8 !important;
+}
+
+/* PAGINATION ACTIVE */
+.activePage {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+/* SECTION TABLE HEADER */
+.sectionTable th {
+  background: #2563eb !important;
+}
+
+/* PROFILE IMAGES */
+.profileImg,
+.profileImgTop,
+.tableImg {
+  border: none !important;
+}
+
+/* INPUT FOCUS */
+.modalContent input:focus,
+.modalContent textarea:focus,
+.modalContent select:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* EXPORT BUTTONS */
+.exportBtns button:nth-child(1) {
+  background: #1d4ed8 !important;
+}
+
+.exportBtns button:nth-child(2) {
+  background: #2563eb !important;
+}
+
+.exportBtns button:nth-child(3) {
+  background: #3b82f6 !important;
+}
+
+.exportBtns button:nth-child(4) {
+  background: #1e40af !important;
+}
+
+/* MODAL BUTTONS */
+.modalContent button:first-of-type {
+  background: #2563eb !important;
+}
+.modalContent button:first-of-type:hover {
+  background: #1d4ed8 !important;
+}
+
+/* TABLE CARD */
+.tableCard {
+  background: rgba(255,255,255,0.9) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* CONTENT FORM CARD */
+.contentForm {
+  border-top: 4px solid #2563eb;
+}
+
+/* SECTION TITLE */
+.sectionTitle {
+  color: #1e3a8a;
+}
+
+/* FORM TITLE */
+.formTitle {
+  border-bottom: 2px solid #2563eb;
+  color: #1e3a8a;
+}
+
+/* ACTION BUTTON TWEAK */
+.editBtn {
+  background: #3b82f6 !important;
+}
+.editBtn:hover {
+  background: #2563eb !important;
+}
+
+.deleteBtn {
+  background: #ef4444 !important; /* keep red for delete */
+}
+
+.viewBtn {
+  background: #1d4ed8 !important;
+}
+.viewBtn:hover {
+  background: #1e40af !important;
+}
+
+
+
+.adminProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;   /* 🔥 makes circle */
+  object-fit: cover;    /* 🔥 prevents stretching */
+  cursor: pointer;
+}
+.topRight {
+  display: flex;
+  align-items: center;   /* 🔥 vertical center */
+  gap: 12px;             /* space between image & button */
+}
+
+.logoutTop {
+  display: flex;
+  align-items: center;   /* icon + text center */
+  gap: 6px;
+  padding: 8px 14px;
+  height: 40px;          /* 🔥 same height as image */
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-weight: 500;
+}
+.adminIcon {
+  font-size: 30px;
+  color: #9ca3af;
+}
+
+/* SIDEBAR HEADER */
+.sidebarHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 15px;
+}
+
+/* PROFILE IMAGE */
+.sidebarProfileImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+/* DEFAULT ICON */
+.sidebarIcon {
+  font-size: 60px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+/* ADMIN NAME */
+.adminName {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+.bulkDeleteBtn {
+  background: #ef4444;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.bulkDeleteBtn:hover {
+  background: #b91c1c;
+}
+/* ================= PAGE ================= */
+
+.downloadPage{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  width:100%;
+}
+
+@media(max-width:992px){
+  .downloadPage{
+    flex-direction:column;
+  }
+}
+
+/* ================= FORM ================= */
+
+.downloadForm{
+  width:320px;
+  min-width:320px;
+  background:#fff;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.08);
+
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.downloadForm input,
+.downloadForm textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:14px;
+  outline:none;
+  transition:0.2s;
+}
+
+.downloadForm input:focus,
+.downloadForm textarea:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+}
+
+.downloadForm textarea{
+  min-height:120px;
+  resize:none;
+}
+
+/* ================= FILE SELECTED ================= */
+
+.selectedFiles{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.fileItem{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#f3f4f6;
+  padding:10px;
+  border-radius:10px;
+  font-size:13px;
+}
+
+.fileItem button{
+  border:none;
+  background:#ef4444;
+  color:white;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+/* ================= TABLE CARD ================= */
+
+.downloadTable{
+  flex:1;
+  background:#fff;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.08);
+  overflow:hidden;
+}
+
+/* ================= TABLE WRAPPER ================= */
+
+.tableWrapper{
+  width:100%;
+  overflow-x:auto;
+  border-radius:14px;
+}
+
+/* ================= TABLE ================= */
+
+.downloadTable table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  min-width:950px;
+}
+
+/* ================= HEAD ================= */
+
+.downloadTable thead tr{
+  background:#2563eb;
+}
+
+.downloadTable th{
+  color:white;
+  padding:14px 12px;
+  font-size:13px;
+  font-weight:600;
+  text-align:center;
+  white-space:nowrap;
+}
+
+/* ================= BODY ================= */
+
+.downloadTable td{
+  padding:14px 10px;
+  font-size:13px;
+  color:#374151;
+  text-align:center;
+  vertical-align:top;
+  border-bottom:1px solid #e5e7eb;
+}
+
+/* ================= ROW ================= */
+
+.downloadTable tbody tr{
+  transition:0.2s;
+}
+
+.downloadTable tbody tr:hover{
+  background:#f9fafb;
+}
+
+/* ================= FILE COLUMN ================= */
+
+.downloadFiles{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:220px;
+}
+
+/* SINGLE FILE CARD */
+
+.singleFileCard{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+/* LEFT */
+
+.fileLeft{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  color:#374151;
+  text-align:left;
+  word-break:break-word;
+}
+
+/* ACTIONS */
+
+.fileActions{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+/* BUTTONS */
+
+.downloadMiniBtn,
+.editMiniBtn,
+.deleteMiniBtn{
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:600;
+  transition:0.2s;
+}
+
+/* COLORS */
+
+.downloadMiniBtn{
+  background:#2563eb;
+  color:white;
+}
+
+.editMiniBtn{
+  background:#f59e0b;
+  color:white;
+}
+
+.deleteMiniBtn{
+  background:#ef4444;
+  color:white;
+}
+
+/* HOVER */
+
+.downloadMiniBtn:hover{
+  background:#1d4ed8;
+}
+
+.editMiniBtn:hover{
+  background:#d97706;
+}
+
+.deleteMiniBtn:hover{
+  background:#dc2626;
+}
+
+/* DELETE DOC BUTTON */
+
+.deleteBtn{
+  border:none;
+  background:#ef4444;
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:600;
+}
+
+/* SEARCH */
+
+.tableTopBar{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:15px;
+}
+
+.searchBox{
+  width:260px;
+  padding:10px 14px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  outline:none;
+}
+
+/* PAGINATION */
+
+.pagination{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.pagination button{
+  border:none;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  cursor:pointer;
+  background:#e5e7eb;
+  font-weight:600;
+}
+
+.pagination .activePage{
+  background:#2563eb;
+  color:white;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .downloadForm{
+    width:100%;
+    min-width:100%;
+  }
+
+  .downloadTable{
+    width:100%;
+    padding:12px;
+  }
+
+  .downloadTable th,
+  .downloadTable td{
+    padding:10px 8px;
+    font-size:11px;
+  }
+
+  .singleFileCard{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .fileActions{
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .searchBox{
+    width:100%;
+  }
+
+  .tableTopBar{
+    justify-content:stretch;
+  }
+}
+
+
+
+
+
+
+
+.selectedFiles{
+  margin-top:15px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.fileItem{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#f5f5f5;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.fileItem button{
+  border:none;
+  background:red;
+  color:white;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.singleFileCard{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:10px;
+  background:#f5f5f5;
+}
+
+.fileLeft{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.fileActions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.downloadMiniBtn,
+.editMiniBtn,
+.deleteMiniBtn{
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.downloadMiniBtn{
+  background:#2196f3;
+  color:white;
+}
+
+.editMiniBtn{
+  background:#ff9800;
+  color:white;
+}
+
+.deleteMiniBtn{
+  background:#f44336;
+  color:white;
+}

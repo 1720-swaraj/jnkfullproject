@@ -1,0 +1,14 @@
+.footer {
+  margin-top: 50px;
+  padding: 30px;
+
+  background: #0f172a;
+  color: #cbd5e1;
+
+  text-align: center;
+}
+
+.footer img {
+  width: 120px;
+  opacity: 0.8;
+}

@@ -1,0 +1,48 @@
+.usersPage {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.usersPage h2 {
+  margin-bottom: 15px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--secondary);
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+button {
+  background: var(--danger);
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+html {
+  font-size: 17px;
+}
+
+body {
+  font-weight: 500;
+}

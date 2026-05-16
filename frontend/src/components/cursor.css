@@ -1,0 +1,12 @@
+body {
+  cursor: none;
+}
+
+body {
+  cursor: url("/yellow-arrow.svg") 0 0, auto;
+}
+
+/* keep normal pointer for buttons */
+button, a {
+  cursor: pointer;
+}

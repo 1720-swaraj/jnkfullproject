@@ -1,0 +1,123 @@
+/* 🔥 NAVBAR */
+.navbar {
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* 🔥 LOGO */
+.logo {
+  display: flex;
+  align-items: center;   /* 🔥 vertical center */
+         /* take full navbar height */
+
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.logo span {
+  color: #f97316;
+}
+
+/* 🔥 NAV LINKS */
+.navLinks {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+/* 🔥 LINK */
+.navLinks a {
+  position: relative;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.navLinks a:hover {
+  color: #f97316;
+}
+
+/* ACTIVE */
+.activeLink {
+  color: #f97316;
+}
+
+/* UNDERLINE */
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #f97316;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.navLinks a:hover::after,
+.activeLink::after {
+  width: 100%;
+}
+
+/* 🔥 MENU ICON */
+.menuIcon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  .menuIcon {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 260px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 90px 25px;
+
+    background: white;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+
+    transition: 0.4s ease;
+  }
+
+  .navLinks.active {
+    right: 0;
+  }
+
+  .navLinks a {
+    width: 100%;  
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+}
