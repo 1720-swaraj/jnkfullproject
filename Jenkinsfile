@@ -10,6 +10,25 @@ pipeline {
     }
 
     stages {
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
+        stage('build stage backend') {
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+        }
+
+        // stage('move jar file') {
+        //     steps {
+        //         cp 'target/janlok-demo-0.0.1-SNAPSHOT.jar', "${DEPLOY_DIR}/"
+        //     }
+        // }    
+
         stage('Checkout') {
             steps {
                 checkout scm
