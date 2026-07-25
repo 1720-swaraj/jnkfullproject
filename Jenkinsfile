@@ -11,6 +11,12 @@ pipeline {
 
     stages {
 
+         stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
         // stage('Clean Workspace') {
         //     steps {
         //         cleanWs()
@@ -29,11 +35,7 @@ pipeline {
         //     }
         // }    
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+       
 
         stage('Install & Build Frontend') {
             steps {
