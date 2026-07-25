@@ -21,6 +21,14 @@ pipeline {
                 }
             }
         }
+        stage('Deploy Frontend') {
+            steps {
+                sh """
+                    rm -rf ${DEPLOY_DIR}/*
+                    cp -r frontend/dist/* ${DEPLOY_DIR}/
+                """
+            }
+        }
 
     }
 
