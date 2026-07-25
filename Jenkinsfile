@@ -5,6 +5,9 @@ pipeline {
         git 'git'
         maven 'maven'
     }
+    environment {
+        DEPLOY_DIR = '/var/www/janlok-demo'
+    }
 
     stages {
         stage('Checkout') {
